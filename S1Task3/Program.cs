@@ -1,4 +1,5 @@
-﻿int n = 178;
+﻿Console.Write("Введите трехзначное число: ");
+int n = Convert.ToInt32(Console.ReadLine());
 int q1 = n / 100;
 int q2 = n / 10;
 int q_count = q2 * 10;
