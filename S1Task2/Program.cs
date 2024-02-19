@@ -1,4 +1,5 @@
-﻿int n = 4;
+﻿Console.Write("Введите число: ");
+int n = Convert.ToInt32(Console.ReadLine());
 int i = -n;
 while(i <= n)
 {
