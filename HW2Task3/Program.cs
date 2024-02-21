@@ -1,7 +1,6 @@
 ﻿// Напишите программу, которая принимает на вход целое число из отрезка [10, 99] и показывает наибольшую цифру числа.
 Console.Write("Введите двузначное число: ");
-int a = Con
-vert.ToInt32(Console.ReadLine());
+int a = Convert.ToInt32(Console.ReadLine());
 if (a > 99 || a < 10)
 {
     Console.WriteLine("Неподходящее число");
