@@ -1,4 +1,4 @@
-﻿int FirstDigit (int N)
+﻿int FindFirstDigit (int N)
 {
     int d = N;
     while (N > 9) // Цикл вычисляет первую цифру числа
@@ -36,11 +36,11 @@ int CountDigit (int N)
 int N = new Random().Next(1, 100001) ;
 int da = CountDigit(N);
 int [] array = new int [da];
-array[0] = FirstDigit(N);
+array[0] = FindFirstDigit(N);
 for (int i = 1; i < array.Length; i++)
 {
     N = RemoveFirstDigit(N);
-    array[i] = FirstDigit(N);    
+    array[i] = FindFirstDigit(N);    
 }
 foreach (var item in array)
 {
