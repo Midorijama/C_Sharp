@@ -14,7 +14,7 @@ int[] FillArrayFromKeyboard(int n)
 int[] FillArrayRandomly(int n)
 {
     int[] array = new int[n];
-    for (int i = 0; i < col.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
         array[i] = new Random().Next(1, 10);
     }
@@ -127,4 +127,45 @@ int FindMaximumInArray(int[] numbers)
             max = e;
     }
     return max;
+}
+
+int FindLastDigit(int n)
+{
+    while (n > 10)
+    {
+        n %= 10;
+    }
+    return n;
+}
+
+double TurnArrayIntoNumberStraight(int[] arr)
+{
+    double s = 0;
+    for (int i = 0; i < arr.Length - 1; i++)
+    {
+        double p = Math.Pow(10, (arr.Length - 1 - i));
+        s = s + arr[i]*p;
+    } 
+    int n = arr.Length-1;
+    s = s + arr[n];
+    return s;
+}
+int FindPrimeInArray(int[] a)
+{
+    int count = 0;
+    int count2 = 0;
+    for (int i = 0; i < a.Length; i++)
+    {
+        int n = 1;
+        while (n <= a[i])
+        {
+            if (a[i] % n == 0)
+                count = count + 1;
+            n = n + 1;
+        }
+        if (count <= 2)
+            count2 = count2 + 1;
+        count = 0;
+    }
+    return count2;
 }
