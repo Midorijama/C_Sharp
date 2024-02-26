@@ -34,9 +34,9 @@ void PrintArray(int[] arr)
 int FindAmountOfEvensInArray(int[] arr)
 {
     int c = 0;
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i < arr.Length; i++)
     {
-        if (array[i] % 2 == 0)
+        if (arr[i] % 2 == 0)
             c = c + 1;
     }
     return c;
@@ -73,7 +73,7 @@ int MultiplyElementsInArray(int[] arr)
     return product;
 }
 
-int GetFindFirstDigitOfNumber(int N)
+int FindFirstDigitOfNumber(int N)
 {
     int d = N;
     while (N > 9)
@@ -150,6 +150,7 @@ double TurnArrayIntoNumberStraight(int[] arr)
     s = s + arr[n];
     return s;
 }
+
 int FindPrimeInArray(int[] a)
 {
     int count = 0;
@@ -168,4 +169,47 @@ int FindPrimeInArray(int[] a)
         count = 0;
     }
     return count2;
+}
+
+double TurnArrayIntoNumberBackwards(int[] arr)
+{
+    double s = 0;
+    for (int i = 0; i < arr.Length; i++)
+    {
+        double p = Math.Pow(10, i);
+        s = s + arr[i]*p;
+    } 
+    return s;
+}
+
+int [] TurnNumbertoArrayStraight (double n, int a)
+{
+    int [] arr = new int [a];
+    for (int i = 0; i < arr.Length; i++)
+    {
+        arr[arr.Length - i - 1] = Convert.ToInt32(n) % 10;
+        n = Convert.ToInt32(n)/10;
+    }
+    return arr;
+}
+
+string InputNumber()
+{
+    Console.WriteLine("Введите число:");
+    string n = Console.ReadLine()!;
+    return n;
+}
+
+bool CheckForEvenDigitsSum(int n)
+{
+    int s = 0;
+    while (n > 0)
+    {
+        s = s + (n % 10);
+        n = n / 10;
+    }
+    if (s % 2 == 0)
+        return true;
+    else
+        return false;
 }
