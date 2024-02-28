@@ -213,3 +213,82 @@ bool CheckForEvenDigitsSum(int n)
     else
         return false;
 }
+
+int[,] FillMatrixArrayFromKeyboard(int n, int m)
+{
+    int[,] array = new int[n, m];
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            Console.Write($"Введите элемент {j + 1} массива из {i} строки: ");
+            array[i,j] = Convert.ToInt32(Console.ReadLine());
+        }
+    }
+    return array;
+}
+
+void PrintMatrixArray(int[,] arr)
+{
+    for (int i = 0; i < arr.GetLength(1); i++)
+    {
+        for (int j = 0; j < arr.GetLength(0); j++)
+        {
+            Console.Write($"{arr [i, j]}, ");
+        }
+        Console.Write("\b\b ");
+        Console.WriteLine();
+    }
+}
+
+int[,] FillMatrixArrayRandomly(int n, int m)
+{
+    int[,] array = new int[n,m];
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            array[i,j] = new Random().Next(1, 1000);
+        }
+    }
+    return array;
+}
+
+int NumberOfDigitsInString(string c)
+{
+    int s = 0;
+    for (int i = 0; i < c.Length; i++)
+    {
+        if (char.IsAsciiLetter(c[i]))
+        {
+        }
+        else
+        {
+            s = s + 1;
+        }
+    }
+    return s;
+}
+
+string ExcludeLettersFromString (string c)
+{
+string newstring = "";
+for (int j = 0; j < c.Length; j++)
+{
+    if (char.IsDigit(c[j]))
+    {
+        newstring = newstring + c[j];
+    }
+}
+return newstring;
+}
+
+int[] ConvertNumberedStringToArray (string newstring, int s)
+{
+    int [] array = new int [s];
+for (int i = 0; i < s; i++)
+{
+    array[i] = Convert.ToInt32(Convert.ToString(newstring[i]));
+}
+return array;
+} 
