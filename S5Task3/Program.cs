@@ -18,9 +18,9 @@ int[,] FillMatrixArrayFromKeyboard(int n, int m)
 
 void PrintMatrixArray(int[,] arr)
 {
-    for (int i = 0; i < arr.GetLength(1); i++)
+    for (int i = 0; i < arr.GetLength(0); i++)
     {
-        for (int j = 0; j < arr.GetLength(0); j++)
+        for (int j = 0; j < arr.GetLength(1); j++)
         {
             Console.Write($"{arr [i, j]}, ");
         }
@@ -42,10 +42,10 @@ void PrintArray(int[] arr)
 int [] CreateArrayFromAveragesOfLinesOfMatrix (int [,] array, int n, int m)
 {
     int [] newarray = new int [n];
-    for (int i = 0; i < array.GetLength(1); i++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
         int s = 0;
-        for (int j = 0; j < array.GetLength(0); j++)
+        for (int j = 0; j < array.GetLength(1); j++)
         {
             s = s+array[i,j];
         }

@@ -34,17 +34,16 @@ Console.WriteLine("Введите количество столбцов: ");
 int m = Convert.ToInt32(Console.ReadLine());
 int [,] array = FillMatrixArrayRandomly(n, m);
 PrintMatrixArray(array);
+int temp = 0;
 for (int i = 0; i < n; i++)
 {
     for (int j = 0; j < m; j++)
     {
-        int temp = 0;
         if(i == 0)
         {            
-            temp = array[i , j];
-            array[i , j] = array[m-1, i];
-            array[m-1, i] = temp;
-            temp = 0;
+            temp = array[i,j];
+            array[i,j] = array[m-1,j];
+            array[m-1,j] = temp;
         }
     }
 }
