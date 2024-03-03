@@ -234,9 +234,8 @@ void PrintMatrixArray(int[,] arr)
     {
         for (int j = 0; j < arr.GetLength(1); j++)
         {
-            Console.Write($"{arr [i, j]}, ");
+            Console.Write($"{arr [i, j]}\t");
         }
-        Console.Write("\b\b ");
         Console.WriteLine();
     }
 }
@@ -244,9 +243,9 @@ void PrintMatrixArray(int[,] arr)
 int[,] FillMatrixArrayRandomly(int n, int m)
 {
     int[,] array = new int[n,m];
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        for (int j = 0; j < m; j++)
+        for (int j = 0; j < array.GetLength(1); j++)
         {
             array[i,j] = new Random().Next(1, 1000);
         }
@@ -292,3 +291,23 @@ for (int i = 0; i < s; i++)
 }
 return array;
 } 
+
+string MakeStringFromArray (char[] arr)
+{
+    string newstring = "";
+    for (int i = 0; i < arr.Length; i++)
+    {
+        newstring = newstring + Convert.ToString(arr[i]);
+    }
+    return newstring;
+}
+
+char [] CreateArrayFromString (string n, int s)
+{
+    char [] array = new char [s];
+    for (int i = 0; i < s; i++)
+    {
+        array[i] = Convert.ToChar(n[i]);
+    }
+    return array;
+}
