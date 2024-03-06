@@ -3,7 +3,7 @@
 
 void PrintMatrixArray(int[,] arr)
 {
-    for (int i = 0; i < arr.GetLength(0); i++)
+    for (int i = 0; i < GetLength(0); i++)
     {
         for (int j = 0; j < arr.GetLength(1); j++)
         {
@@ -17,9 +17,9 @@ void PrintMatrixArray(int[,] arr)
 int[,] FillMatrixArrayRandomly(int n, int m)
 {
     int[,] array = new int[n,m];
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < arr.GetLength(0); i++)
     {
-        for (int j = 0; j < m; j++)
+        for (int j = 0; j < arr.GetLength(1); j++)
         {
             array[i,j] = new Random().Next(1, 10);
         }
@@ -33,9 +33,9 @@ Console.WriteLine("Введите количество столбцов: ");
 int m = Convert.ToInt32(Console.ReadLine());
 int [,] array = FillMatrixArrayRandomly(n, m);
 PrintMatrixArray(array);
-for (int i = 0; i < n; i++)
+for (int i = 0; i < arr.GetLength(0); i++)
 {
-    for (int j = 0; j < m; j++)
+    for (int j = 0; j < arr.GetLength(1); j++)
     {
         if (i%2 == 0 && j%2 == 0)
         {
@@ -44,3 +44,6 @@ for (int i = 0; i < n; i++)
     }
 }
 PrintMatrixArray(array);
+
+
+
